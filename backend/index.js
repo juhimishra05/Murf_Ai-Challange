@@ -1,4 +1,4 @@
-// index.js
+
 import express from 'express';
 import http from 'http';
 import { WebSocketServer } from 'ws';
@@ -13,10 +13,10 @@ const wss = new WebSocketServer({ server, path: '/ws-client' });
 
 const PORT = process.env.PORT || 4000;
 
-// Simple HTTP route to test
+
 app.get('/', (req, res) => res.send('Murf Voice Chatbot backend'));
 
-// When the frontend connects, we accept messages {type:'speak', text: '...'}
+
 wss.on('connection', (ws) => {
   console.log('Frontend connected to backend WS');
 
